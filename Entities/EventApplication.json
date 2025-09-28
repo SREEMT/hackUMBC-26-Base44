@@ -1,0 +1,48 @@
+{
+  "name": "EventApplication",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Event ID"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Applicant email"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "denied",
+        "waitlisted"
+      ],
+      "default": "pending"
+    },
+    "application_message": {
+      "type": "string",
+      "description": "Why they want to attend"
+    },
+    "guests_requested": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of guests they want to bring"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Phone verification status"
+    },
+    "verification_code": {
+      "type": "string",
+      "description": "SMS verification code"
+    },
+    "reviewed_by": {
+      "type": "string",
+      "description": "Organizer who reviewed the application"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+ 
