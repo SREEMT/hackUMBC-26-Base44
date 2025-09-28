@@ -1,0 +1,48 @@
+{
+  "name": "Attendee",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Event ID"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Attendee email"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "denied",
+        "waitlisted"
+      ],
+      "default": "pending"
+    },
+    "application_text": {
+      "type": "string",
+      "description": "Why they want to attend"
+    },
+    "checked_in": {
+      "type": "boolean",
+      "default": false
+    },
+    "checked_in_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "checked_in_by": {
+      "type": "string",
+      "description": "Bouncer who checked them in"
+    },
+    "guests_brought": {
+      "type": "number",
+      "default": 0
+    },
+    "guest_names": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+ 
