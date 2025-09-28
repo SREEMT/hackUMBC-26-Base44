@@ -1,0 +1,48 @@
+{
+  "name": "EventRole",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Event ID"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "User email"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "organizer",
+        "bouncer",
+        "performer"
+      ],
+      "description": "Role in the event"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "manage_event",
+          "screen_attendees",
+          "check_in",
+          "flag_attendees",
+          "view_dashboard"
+        ]
+      },
+      "description": "Specific permissions for this role"
+    },
+    "assigned_by": {
+      "type": "string",
+      "description": "Email of who assigned this role"
+    }
+  },
+  "required": [
+    "event_id",
+    "user_email",
+    "role",
+    "permissions",
+    "assigned_by"
+  ]
+}
