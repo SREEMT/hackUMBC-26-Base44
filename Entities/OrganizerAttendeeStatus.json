@@ -1,0 +1,48 @@
+{
+  "name": "OrganizerAttendeeStatus",
+  "type": "object",
+  "properties": {
+    "organizer_email": {
+      "type": "string",
+      "description": "Organizer's email"
+    },
+    "attendee_email": {
+      "type": "string",
+      "description": "Attendee's email"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "flagged",
+        "banned"
+      ],
+      "default": "ok"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "by": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "event_context": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+ 
